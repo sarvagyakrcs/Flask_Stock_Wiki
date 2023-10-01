@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="mainSignUp101Container2">
+    <div class="center mainFormContainer">
+        <form id="numberOfCompaniesForm" method="post">
+            <div class="form-group101">
+                <label for="numberOfCompanies" class="rtdFormLabel102">Enter Number of Companies:</label>
+                <input class="rtdFormInput101" type="text" id="numberOfCompanies" name="numberOfCompanies" required
+                    placeholder="e.g., 5 | Enter Integer Only | Max : 50">
+            </div>
+            <button type="button" class="rtdFormButton101 primary-button101 addCompanies" id="addCompaniesBtn">Add Companies</button>
+        </form>
+    </div>
+    <div class="formGridContainer" id="formGridContainer">
+    </div>
+    <button type="button" class="rtdFormButton101 primary-button101" id="calculateBtn">Calculate Portfolio Value</button>
+    <h2 class="homeHeading-h2 smaller"><b>Portfolio Value:</b> $ <span id="portfolioValue">{{ portfolio_value }}</span></h2>
+    <h2 class="homeHeading-h2 smaller"><b>Portfolio Size:</b> <span id="portfolioSize">{{ numberOfCompanies }}</span></h2>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- JavaScript Code (StockBuilder.html) -->
+<script>
+    async function updatePortfolioSize() {
+        var numberOfCompanies = $("#formGridContainer > .formContainer1011").length;
+        $("#portfolioSize").text(numberOfCompanies);
+    }
+
+    async function fetchStockData(ticker, shares) {
+        try {
+            const response = await fetch(`https://cloud.iexapis.com/stable/stock/${ticker}/quote?token=pk_017dddcdcb664dd8867d6817b089959a`);
+            const data = await response.json();
+            if (data.latestPrice !== null) {
+                return shares * data.latestPrice;
+            } else {
+                return 0;
+            }
+        } catch (error) {
+            console.error(error);
+            return 0;
+        }
+    }
+
+    async function calculatePortfolioValue() {
+        var portfolioValue = 0;
+        var errors = [];
+
+        var numberOfCompanies = $("#formGridContainer > .formContainer1011").length; // Move this here
+
+        for (var i = 0; i < numberOfCompanies; i++) {
+            var ticker = $("#ticker" + i).val();
+            var shares = parseInt($("#shares" + i).val());
+
+            if (isNaN(shares) || shares <= 0) {
+                errors.push("Invalid input for shares of company " + (i + 1) + ". Please enter a valid positive integer.");
+            } else {
+                portfolioValue += await fetchStockData(ticker, shares);
+            }
+        }
+
+        if (errors.length > 0) {
+            for (var j = 0; j < errors.length; j++) {
+                $("#errorShares" + j).text(errors[j]);
+            }
+        } else {
+            $("#portfolioValue").text(portfolioValue.toFixed(2));
+            for (var j = 0; j < numberOfCompanies; j++) {
+                $("#errorShares" + j).empty();
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        $("#addCompaniesBtn").click(function () {
+            var numberOfCompanies = parseInt($("#numberOfCompanies").val());
+            if (!isNaN(numberOfCompanies)) {
+                $("#formGridContainer").empty();
+                for (var i = 0; i < numberOfCompanies; i++) {
+                    var formContainer = '<div class="formContainer1011">' +
+                        '<div class="form-group101">' +
+                        '<label for="ticker' + i + '" class="rtdFormLabel102">Enter Company\'s Ticker:</label>' +
+                        '<input class="rtdFormInput101" type="text" id="ticker' + i + '" name="ticker' + i + '" required ' +
+                        'placeholder="e.g., AAPL">' +
+                        '</div>' +
+                        '<div class="form-group101">' +
+                        '<label for="shares' + i + '" class="rtdFormLabel102">Enter Number of Shares:</label>' +
+                        '<input class="rtdFormInput101" type="number" min="1" id="shares' + i + '" name="shares' + i + '" required ' +
+                        'placeholder="e.g., 5">' +
+                        '</div>' +
+                        '<div class="error-message" id="errorShares' + i + '"></div>' +
+                        '</div>';
+                    $("#formGridContainer").append(formContainer);
+                }
+
+                updatePortfolioSize();
+            }
+        });
+
+        $("#calculateBtn").click(function () {
+            calculatePortfolioValue();
+        });
+    });
+</script>
+
+
+{% endblock %}

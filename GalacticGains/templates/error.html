@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error 404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .error101-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .error101-heading {
+            font-size: 36px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .error101-message {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .error101-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .error101-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="error101-container">
+        <h1 class="error101-heading">Error 404</h1>
+        <p class="error101-message">The page you are looking for could not be found.</p>
+        <p class="error101-message">Please check the URL or <a href="/" class="error101-link">go back to the homepage</a>.</p>
+    </div>
+    <div class="error101-container">
+        <h1 class="error101-heading">Error {{ error_code }}</h1>
+        <p class="error101-message">{{ error_message }}</p>
+        <p class="error101-message">Please check the URL or <a href="/" class="error101-link">go back to the homepage</a>.</p>
+    </div>
+</body>
+</html>

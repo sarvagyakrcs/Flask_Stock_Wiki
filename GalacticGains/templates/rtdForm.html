@@ -1,0 +1,49 @@
+{#{% extends 'layout.html' %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="mainRtdontainer">#}
+{#        <div class="rtdForm">#}
+{#            <div class="newspaper-title">#}
+{#                <u>Stock-O-Matic</u>#}
+{#            </div>#}
+{#            <div class="rtdMain">#}
+{#                <div class="newspaper-info">#}
+{#                    <h2 class="newspaper-subtitle">Stay informed about your favorite company's real-time data and financial metrics, empowering you with instant insights to make better investment decisions.</h2>#}
+{#                </div>#}
+{#                <form action="/get_stock_data" method="POST" class="centerF">#}
+{#                    <div class="form-group">#}
+{#                        <label for="companyName" class="1001">Enter Company's Ticker : </label>#}
+{#                        <input class="1001" type="text" id="companyName" name="ticker" required placeholder="e.g., AAPL">#}
+{#                    </div>#}
+{#                    <button class="button primary-button">Get Stock Data</button>#}
+{#                    <button class="button secondary-button">Cancel</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock content %}#}
+
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="mainRtdontainer101">
+        <div class="rtdForm101">
+            <div class="newspaper-title101">
+                <u>Stock-O-Matic</u>
+            </div>
+            <div class="rtdMain101">
+                <div class="newspaper-info101">
+                    <h2 class="newspaper-subtitle101">Stay informed about your favorite company's real-time data and financial metrics, empowering you with instant insights to make better investment decisions.</h2>
+                </div>
+                <form action="/get_stock_data" method="POST" class="centerF101">
+                    <div class="form-group101">
+                        <label for="companyName101" class="rtdFormLabel101">Enter Company's Ticker:</label>
+                        <input class="rtdFormInput101" type="text" id="companyName101" name="ticker" required placeholder="e.g., AAPL">
+                    </div>
+                    <button class="rtdFormButton101 primary-button101">Get Stock Data</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

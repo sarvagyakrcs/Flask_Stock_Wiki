@@ -1,0 +1,210 @@
+.left{
+    margin-left: 10px;
+}
+
+.mainBox{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.mainBox img{
+    height: 500px;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 50px;
+}
+
+.text-container p:hover{
+    opacity: 1.4;
+    color: floralwhite;
+}
+
+.home-h1{
+    margin-bottom: 50px;
+    font-size: 45px;
+    text-align: justify;
+}
+
+.homeHeading-h2{
+    margin-bottom: 10px;
+    font-style: inherit;
+}
+
+.home-para{
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.051em;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.homeData{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.homeDataText{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.homeData-h1{
+    font-size: 44px;
+    margin: 50px;
+}
+
+.homeData-p{
+    font-size: 22px;
+    margin-left: 55px;
+    margin-bottom: 10px;
+    color: floralwhite;
+}
+
+.home-img-grid img{
+    width: 300px;
+    margin: 30px;
+}
+
+.homeTextCard{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+hr{
+    border: 2px solid rgba(255, 255, 255, 0.34);
+}
+
+.homeTextCard img{
+    height: 64px;
+    width: 64px;
+    border-radius: 0;
+    margin-left: 55px;
+    margin-bottom: 10px;
+}
+
+.homeTextCard p{
+    font-size: 17px;
+}
+
+.ErrorVideo{
+    height: 95vh;
+    border-radius: 0;
+    align-content: center;
+}
+
+.home-img-grid{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.programmer-data{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    padding: 10px 90px ;
+}
+
+/*card*/
+.card {
+  --main-color: #fff;
+  --submain-color: #ccc;
+  --bg-color: rgba(51, 50, 50, 0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: 300px;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--bg-color);
+  margin: 10px;
+}
+
+.card__img {
+  height: 192px;
+  width: 100%;
+}
+
+.card__img svg {
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__avatar {
+  position: absolute;
+  width: 114px;
+  height: 114px;
+  background: var(--bg-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 57px);
+}
+
+.card__avatar svg {
+  width: 100px;
+  height: 100px;
+}
+
+.card__title {
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+}
+
+.card__subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+}
+
+.card__btn {
+  margin-top: 15px;
+  width: 76px;
+  height: 31px;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--main-color);
+  background: var(--bg-color);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.card__btn-solid {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card__btn:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card__btn-solid:hover {
+  background: var(--bg-color);
+  color: var(--main-color);
+}

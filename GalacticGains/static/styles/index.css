@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Pacifico&family=Roboto:wght@300&family=Rubik:wght@300&family=Sintony&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    background: none;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+p, h1, h2{
+    color: white;
+}
+
+.bg-black{
+    /*background-color: black;*/
+}
+
+img{
+    border-radius: 25px;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+b{
+    font-weight: bolder;
+    color: greenyellow;
+}
+
+u{
+    text-decoration: none;
+    font-size: smaller;
+    color: antiquewhite;
+}
+
+input{
+    margin: 5px 0;
+    background: rgba(128, 128, 128, 0.17);
+}
+
+input[type="submit"]:focus {
+  background: none;
+    color: white;
+    margin: 5px 0;
+}
+
+input[type="submit"]:hover {
+  background: rgba(0, 0, 255, 0.22);
+    cursor: pointer;
+    color: white;
+    margin: 5px 0;
+    transform: scale(1.01);
+    opacity: 1.5;
+}
+
+.smaller{
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+}
+

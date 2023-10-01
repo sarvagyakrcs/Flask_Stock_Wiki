@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+/* font-family: 'Inter', sans-serif; */
+
+.footer-conatainer{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+/* vertical-line */
+.vl {
+    border-left: 6px solid rgba(223, 221, 221, 0.782);
+    opacity: 0.7;
+    height: 100px;
+}
+
+/* main content */
+.f-mainContent{
+    display: flex;
+    align-items: center;
+    background-color: rgba(2, 25, 61, 0.33);
+    width: 100vw;
+    height: 30vh;
+    justify-content: space-evenly;
+}
+
+.f-main{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+
+.f-main-headings{
+    color: aliceblue;
+    font-size: 1.438rem;
+    line-height: 1.4;
+    letter-spacing: 0.005em;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* css-on-anchors */
+.anchor-links-f{
+    opacity: 0.7;
+    transition: 400ms;
+    color: grey;
+}
+
+.anchor-links:hover{
+    opacity: 1.4;
+    transform: scale(1.1);
+}
+
+/* copyright info */
+.copyrightInfo{
+    height: fit-content;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.copyrightInfo p{
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    color: black;
+}

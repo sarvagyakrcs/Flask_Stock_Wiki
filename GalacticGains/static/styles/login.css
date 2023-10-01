@@ -1,0 +1,129 @@
+body
+{
+  font-family:sans-serif;
+  background: -webkit-linear-gradient(to right, #155799, #006209);
+  background: linear-gradient(to right, #655703, #6948e3);
+  color:whitesmoke;
+}
+
+
+h1{
+    text-align: center;
+}
+
+/* Add the following CSS styles to your existing CSS file or create a new one and link it to the HTML. */
+
+/* Basic form styles */
+.mainSignUp101Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.mainSignUp101Container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.formContainer101 {
+  width: 400px;
+  background:none;
+  padding: 20px;
+  border-radius: 10px;
+    border: 1px solid grey;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer1011 {
+  width: 400px;
+  background:none;
+  padding: 20px;
+  border-radius: 10px;
+    border: 1px solid grey;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.titleSignUp101Form {
+  margin: 0;
+}
+
+.formContainer101 p {
+  margin-top: 5px;
+  color: #888;
+}
+
+.signUpForm101 {
+  margin-top: 20px;
+}
+
+/* Input field styles */
+.inputContainer101 {
+  margin-top: 20px;
+}
+
+.formGroup101 {
+  margin-bottom: 15px;
+}
+
+.formGroup101 label {
+  display: block;
+  font-weight: bold;
+}
+
+.formGroup101 input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+.formGroup101 button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.formGroup101 button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styles */
+.errorContainer101 {
+  margin-top: 10px;
+}
+
+/* Forgot password link styles */
+.subcontainer101 {
+  margin-top: 10px;
+}
+
+.subcontainer101 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.subcontainer101 a:hover {
+  text-decoration: underline;
+}
+
+/* Register link styles */
+.register101 {
+  margin-top: 20px;
+}
+
+.register101 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register101 a:hover {
+  text-decoration: underline;
+}

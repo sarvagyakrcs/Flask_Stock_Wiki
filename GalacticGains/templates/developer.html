@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container">
+    <section class="code-section developer101">
+        <h2 class="section-title">init.py</h2>
+        <pre class="code-block">
+            {{ init_py_code }}
+        </pre>
+    </section>
+
+    <section class="code-section developer102">
+        <h2 class="section-title">database.py</h2>
+        <pre class="code-block">
+            {{ database_py_code }}
+        </pre>
+    </section>
+
+    <section class="code-section developer103">
+        <h2 class="section-title">forms.py</h2>
+        <pre class="code-block">
+{{ forms_py_code }}
+        </pre>
+    </section>
+
+    <section class="code-section developer104">
+        <h2 class="section-title">routes.py</h2>
+        <pre class="code-block">
+{{ routes_py_code }}
+        </pre>
+    </section>
+
+    <section class="explanation-section developer105">
+        <h2 class="section-title">Explanation</h2>
+        <p class="explanation-text">
+            The provided code represents a Flask web application with multiple components, including database interaction, form handling, and API requests. It's intended to have a developer.html page with interactive features and a newspaper-like layout. However, the code for developer.html is not provided, so it cannot be explained in detail.
+
+            The code starts with importing required libraries and configuring the database connection using SQLAlchemy. The database.py module defines a User class representing a MySQL table to store user information. It includes functions for verifying login credentials and creating new user accounts.
+
+            The forms.py module defines two classes, LoginForm and SignUpForm, using Flask-WTF and WTForms for handling login and signup forms.
+
+            The routes.py module defines various routes and views for different pages. The '/' route leads to the home page, while '/login' and '/signup' routes handle user login and registration processes. The '/get_stock_data' route fetches stock data using an external API and renders the results on the stock_data.html page.
+
+            The developer() function in routes.py is a route that renders the developer.html page
+        </p>
+    </section>
+</div>
+
+{% endblock %}

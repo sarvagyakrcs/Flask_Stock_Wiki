@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="center">
+        <div class="mainFormContainer">
+            <div class="newspaper-header">
+                <h2 class="newspaper-title">
+                    <u>Stock-O-Matic</u>
+                </h2>
+                <h1 class="newspaper-title">
+                    <u> | </u>
+                </h1>
+                <h1 class="newspaper-title smaller">
+                    <u>{{ data.companyName }}</u>
+                </h1>
+            </div>
+
+            <div class="newspaper-section">
+                <div class="newspaper-info">
+                    <h2 class="newspaper-company-name">
+                        {{ company_data.name }}
+                    </h2>
+                    <h2 class="newspaper-sector-industry">
+                        <b>{{ company_data.sector }}</b> - {{ company_data.industry }}
+                    </h2>
+                    <h2 class="newspaper-ceo">
+                        <b>CEO:</b> {{ company_data.CEO }}
+                    </h2>
+                    <p class="newspaper-description">
+                        {{ company_data.description }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="newspaper-section">
+                <h2 class="newspaper-volume">
+                    <b>Latest Price:</b> ${{ data.latestPrice }}
+                </h2>
+                <h2 class="newspaper-volume">
+                    <b>Volume:</b> ${{ data.volume }}
+                </h2>
+                <h2 class="newspaper-volume">
+                    <b>Latest Price:</b> ${{ data.latestPrice }}
+                </h2>
+                <h2 class="newspaper-volume">
+                    <b>Market Cap:</b>
+                    {% if data.marketCap >= 1000000000000 %}
+                        ${{ data.marketCap / 1000000000000 }} Trillion
+                    {% elif data.marketCap >= 1000000000 %}
+                        ${{ data.marketCap / 1000000000 }} Billion
+                    {% elif data.marketCap >= 1000000 %}
+                        ${{ data.marketCap / 1000000 }} Million
+                    {% else %}
+                        ${{ data.marketCap }}
+                    {% endif %}
+                </h2>
+                <h2 class="newspaper-volume">
+                    <b>P/E Ratio:</b> {{ data.peRatio }}
+                </h2>
+                <h2 class="newspaper-volume">
+                    <b>52-Week Range:</b> ${{ data.week52Low }} - ${{ data.week52High }}
+                </h2>
+                <form action="/chart" method="POST">
+                    <div class="form-group102">
+                        <label for="companyName102" class="rtdFormLabel102">Enter Number of Years :</label>
+                        <input class="rtdFormInput102" type="text" id="companyName102" name="timeYears" required placeholder=" e.g., 5 | Enter Integer Only">
+                        <button class="rtdFormButton101 primary-button101">Plot Graph</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="newspaper-section">
+                <h2 class="newspaper-latest-news">
+                    <b>Latest News:</b>
+                </h2>
+                <ul class="latest-news">
+                    {% for news_item in latest_news %}
+                        <li class="news"><a href="{{ news_item.url }}" target="_blank">{{ news_item.headline }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

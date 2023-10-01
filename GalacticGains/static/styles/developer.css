@@ -1,0 +1,56 @@
+/* Styles for the developer.html page */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Code Section */
+.code-section {
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background:none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.code-block {
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    background:none;
+    border: none;
+}
+
+.code-block pre{
+    color: white;
+}
+
+/* Explanation Section */
+.explanation-section {
+    text-align: justify;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.explanation-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Hover Effects */
+.code-section:hover,
+.explanation-section:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}

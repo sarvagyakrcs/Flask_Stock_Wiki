@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Load Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages': ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('date', 'Date'); // Change the data type to 'date' for the x-axis
+            data.addColumn('number', 'Price');
+
+            // Replace this part with your data
+            var raw_data = {{ data | tojson }};
+            var rows = [];
+
+            for (var i = 0; i < raw_data.length; i++) {
+                rows.push([new Date(raw_data[i].date), raw_data[i].price]); // Parse date string as Date object
+            }
+
+            data.addRows(rows);
+
+            var options = {
+                title: 'Stock Prices vs Time',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                colors: ['#4CAF50'], // Change the graph line color to a good green color
+                backgroundColor: {
+                    gradient: {
+                        color1: '#FF9933', // Orange color
+                        color2: '#FFFFFF', // White color
+                        x1: '0%', y1: '0%',
+                        x2: '0%', y2: '100%',
+                    },
+                },
+                vAxis: {
+                    textStyle: {
+                        color: '#444', // Customize the color of the axis text
+                    },
+                },
+                hAxis: {
+                    textStyle: {
+                        color: '#444', // Customize the color of the axis text
+                    },
+                    format: 'yyyy', // Format the date labels to display only the year
+                    ticks: data.getDistinctValues(0), // Set the ticks to display only distinct years
+                },
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+            // Calculate and display important values
+            var minPrice = google.visualization.data.min(data, 1).value;
+            var maxPrice = google.visualization.data.max(data, 1).value;
+            var avgPrice = google.visualization.data.avg(data, 1).value;
+
+            document.getElementById('min_price').innerText = 'Minimum Price: ' + minPrice;
+            document.getElementById('max_price').innerText = 'Maximum Price: ' + maxPrice;
+            document.getElementById('avg_price').innerText = 'Average Price: ' + avgPrice.toFixed(2);
+        }
+    </script>
+
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #chart_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Use the full viewport height */
+            background-color: #f2f2f2; /* Set a background color for the page */
+        }
+
+        #chart_div {
+            width: 80%; /* Set the width of the chart */
+            max-width: 800px; /* Limit the maximum width of the chart */
+            height: 500px;
+        }
+
+        #stats {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Alphanumeric class names */
+        .chart101 {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .chart102 {
+            color: #777;
+            font-size: 16px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart_container">
+        <div id="chart_div"></div>
+    </div>
+    <div id="stats">
+        <p class="chart101" id="min_price"></p>
+        <p class="chart102" id="max_price"></p>
+        <p class="chart102" id="avg_price"></p>
+    </div>
+</body>
+</html>

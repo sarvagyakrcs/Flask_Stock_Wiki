@@ -1,0 +1,124 @@
+/* Add the following CSS styles to your existing CSS file or create a new one and link it to the HTML. */
+
+/* Basic form styles */
+.mainRtdontainer101 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.rtdForm101 {
+  width: 400px;
+  background:none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid grey;
+}
+
+.newspaper-title101 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.rtdMain101 {
+  text-align: center;
+}
+
+.newspaper-info101 {
+  margin-bottom: 20px;
+}
+
+.newspaper-subtitle101 {
+  font-size: 16px;
+  color: #e7e7e7;
+    text-align: justify;
+}
+
+.centerF101 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group101 {
+  margin-bottom: 15px;
+}
+
+.rtdFormLabel101 {
+  font-weight: bold;
+}
+
+.rtdFormLabel102 {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.rtdFormInput101 {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.rtdFormInput101:focus {
+  color: white;
+}
+
+.rtdFormInput102:focus {
+  color: white;
+}
+
+.rtdFormInput102:focus-visible {
+  color: white;
+}
+
+.rtdFormInput102 {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.rtdFormInput102::placeholder{
+    color: white;
+    margin-left: 10px;
+}
+
+.rtdFormInput101::placeholder{
+    color: white;
+}
+
+.rtdFormButton101 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.primary-button101 {
+  background: -webkit-linear-gradient(to right, rgba(110, 255, 35, 0.29), rgba(147, 61, 178, 0.49));
+  background: linear-gradient(to right, rgba(234, 211, 32, 0.34), rgba(232, 32, 88, 0.33));
+  border: 2px solid grey;
+  border-radius: 10px;
+    color: white;
+  margin-bottom: 10px;
+}
+
+.secondary-button101 {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Button hover styles */
+.rtdFormButton101:hover {
+  opacity: 0.8;
+}
+
+.addCompanies{
+  margin-left: 130px;
+}

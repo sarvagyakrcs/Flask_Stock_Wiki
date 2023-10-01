@@ -1,0 +1,74 @@
+{#{% extends 'layout.html' %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="mainLoginContainer">#}
+{#        <div>#}
+{#            <h1 class="pad">SignUp form using HTML and CSS</h1>#}
+{#            <form class="f-form" method="post">#}
+{#                {{form.csrf_token}}#}
+{##}
+{#                <!-- Main container for all inputs -->#}
+{#                <div class="mainContainer">#}
+{#                    {{form.email.label}} {{form.email}}#}
+{#                    <br><br>#}
+{#                    {{form.password.label}} {{form.password}}#}
+{#                    <br><br>#}
+{#                    {{form.confirmPassword.label}} {{form.confirmPassword}}#}
+{##}
+{#                    <!-- sub container for the checkbox and forgot password link -->#}
+{#                    <div class="subcontainer">#}
+{#                        <p class="forgotpsd"> <a href="#">Forgot Password?</a></p>#}
+{#                    </div>#}
+{##}
+{#                    {{form.register}}#}
+{#                    <font color="red">{{errorMessage}}</font>#}
+{#                    <!-- Sign up link -->#}
+{#                    <p class="register">Not a member? <a href="{{url_for('signUp')}}">Register here!</a></p>#}
+{#                </div>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock content %}#}
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="mainSignUp101Container">
+        <div class="formContainer101">
+            <h1 class="titleSignUp101Form">Sign Up form using HTML and CSS</h1>
+            <form class="signUpForm101" method="post">
+                {{ form.csrf_token }}
+                <div class="inputContainer101">
+                    <div class="formGroup101">
+                        {{ form.email.label }}
+                        {{ form.email }}
+                    </div>
+
+                    <div class="formGroup101">
+                        {{ form.password.label }}
+                        {{ form.password }}
+                    </div>
+
+                    <div class="formGroup101">
+                        {{ form.confirmPassword.label }}
+                        {{ form.confirmPassword }}
+                    </div>
+
+                    <div class="subcontainer101">
+                        <p class="forgotpsd101"><a href="#">Forgot Password?</a></p>
+                    </div>
+
+                    <div class="formGroup101">
+                        {{ form.register }}
+                    </div>
+
+                    <div class="errorContainer101">
+                        <font color="red">{{ errorMessage }}</font>
+                    </div>
+
+                    <p class="register101">Not a member? <a href="{{ url_for('signUp') }}">Register here!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

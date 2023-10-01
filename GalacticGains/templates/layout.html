@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/feature2.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/developer.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/realTimeData.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/rtd.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/lLogin.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/signUp.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/navBar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/footer.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <!--favicon-->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon/rupee-light.png') }}" type="image/x-icon">
+    {% if title %}
+        <title>GalacticGains-{{title}}</title>
+    {% else %}
+        <title>GalacticGains</title>
+    {% endif %}
+</head>
+<body>
+    <header>
+
+        <div class="banner">
+            <p class="ml2">BANNER TEXT HERE</p>
+
+        </div>
+
+         <nav class="nav-bar">
+            <div class="nav-image">
+                <div class="spinner">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                </div>
+                <p class="logo-text">APP NAME</p>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a target="_self" href="/Home" class="anchor-links">Home</a></li>
+                    <li><a target="_self" href="/rtd" class="anchor-links">Stock-O-Matic</a></li>
+                    <li><a target="_self" href="/StockBuilder" class="anchor-links">StockBuilder</a></li>
+                    <li><a target="_self" href="/SignUp" class="anchor-links">SignUp</a></li>
+                    <li><a target="_self" href="/Login" class="anchor-links">Login</a></li>
+                    <li><a target="_self" href="/Developer" class="anchor-links">Developer</a></li>
+                </ul>
+            </div>
+            <div class="nav-search-bar">
+                <input type="text" placeholder="  Enter your Search Query">
+                <button class="sm-btn">Submit</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="bg-black">
+        {% block content %} {% endblock %}
+    </main>
+
+    <footer class="footer-container">
+
+        <div class="f-mainContent">
+
+            <div class="f-navigation-links f-main">
+                <h2 class="f-main-headings">Navigate</h2>
+                <a target="_self" href="/Home" class="anchor-links-f">Home</a>
+                <a target="_self" href="/SignUp" class="anchor-links-f">SignUp</a>
+                <a target="_self" href="/Login" class="anchor-links-f">Login</a>
+                <a target="_self" href="/Developer" class="anchor-links-f">Developer</a>
+                <a target="_self" href="/Contacts" class="anchor-links-f">Contacts</a>
+            </div>
+            <div class="vl"></div>
+
+            <div class="f-social-links f-main">
+
+                <h2 class="f-main-headings">Social Media</h2>
+                    <a target="_self" href="https://twitter.com/C0derNinja" class="anchor-links-f">Twitter</a>
+                    <a target="_self" href="https://www.instagram.com/c0derninja/" class="anchor-links-f">Instagram</a>
+                    <a target="_self" href="https://www.linkedin.com/in/sarvagya-kumar-784406248/" class="anchor-links-f">LinkedIn</a>
+                    <a target="_self" href="https://sarvagyakrcs.github.io/SarvagyaKumar/" class="anchor-links-f">Portfolio Website</a>
+                    <a target="_self" href="mailto:sarvagyakrcs@gmail.com?subject=Feedback&amp;body=Message" class="anchor-links-f">Send Feedback</a>
+                </ul>
+
+            </div>
+            <div class="vl"></div>
+
+            <div class="contact-info f-main">
+                <h2 class="f-main-headings">Contacts</h2>
+                <a target="_self" href="#home" class="anchor-links-f">Email</a>
+                <a target="_self" href="skills.html" class="anchor-links-f">Address</a>
+                <a target="_self" href="projects-info.html" class="anchor-links-f">Phone : XXXX-XXXX-XXXX</a>
+                <a target="_self" href="work-exp.html" class="anchor-links-f">Bangalore</a>
+                <a target="_self" href="contacts.html" class="anchor-links-f">India</a>
+            </div>
+
+        </div>
+
+        <div class="copyrightInfo">
+            <p>
+                &copy; 2023 Sarvagya Kumar. All rights reserved.
+            </p>
+        </div>
+
+    </footer>
+
+<!--    javascript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        let anchorArr = document.getElementsByTagName('a');
+        for (let i = 0; i < anchorArr.length; i++) {
+            anchorArr[i].setAttribute('target', '_blank')
+        }
+        var typed = new Typed('#element', {
+            strings: ['Unleash the Power of Indian Markets - Elevate Your Investments Beyond Borders', 'TEXT-2', 'TEXT-3', 'TEXT-4', 'TEXT-5','Unleash the Power of Indian Markets - Elevate Your Investments Beyond Borders'],
+            typeSpeed: 20,
+        });
+    </script>
+    <script>
+        let textWrapper = document.querySelector('.ml2');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml2 .letter',
+                scale: [4, 1],
+                opacity: [0, 1],
+                translateZ: 0,
+                easing: "easeOutExpo",
+                duration: 950,
+                delay: (el, i) => 70 * i
+            }).add({
+                targets: '.ml2',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+    </script>
+</body>
+</html>
